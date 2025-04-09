@@ -12,7 +12,10 @@ function App() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log('cliccato')
+    console.log('cliccato');
+
+    const updatedArticles = [...articles, newItem];
+    setNewItem(updatedArticles)
   }
 
   return (
