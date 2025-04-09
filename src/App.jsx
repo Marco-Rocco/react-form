@@ -5,6 +5,7 @@ import articles from "../data/articles"
 
 function App() {
   const [newItem, setNewItem] = useState("")
+  const [article, setArticle] = useState(articles.title)
 
   const handleChange = event => {
     setNewItem(event.target.value);
@@ -14,8 +15,12 @@ function App() {
     event.preventDefault();
     console.log('cliccato');
 
-    const updatedArticles = [...articles, newItem];
-    setNewItem(updatedArticles)
+    const updatedArticles = [...articles, {
+      id: articles.length + 1, title: newItem
+    }];
+    setArticle(updatedArticles)
+
+    console.log(updatedArticles);
   }
 
   return (
@@ -25,7 +30,7 @@ function App() {
         {articles.map((article) => <li key={article.id}>{article.title}</li>)}
       </ul>
 
-      <form action="" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleChange} value={newItem} />
         <p>{newItem}</p>
         <button>add new articles</button>
