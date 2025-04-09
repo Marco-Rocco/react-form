@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import articles from "../data/articles"
+import initialStock from "../data/initialStock"
 
 
 
 function App() {
   const [newItem, setNewItem] = useState("")
-  const [article, setArticle] = useState(articles.title)
+  const [articles, setArticle] = useState(initialStock)
 
   const handleChange = event => {
     setNewItem(event.target.value);
@@ -21,6 +21,7 @@ function App() {
     setArticle(updatedArticles)
 
     console.log(updatedArticles);
+    setNewItem("")
   }
 
   return (

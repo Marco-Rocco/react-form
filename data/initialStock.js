@@ -1,4 +1,4 @@
-const articles = [
+const initialStock = [
     {
         id: 1,
         title: "pane",
@@ -21,4 +21,4 @@ const articles = [
     },
 ]
 
-export default articles
+export default initialStock
